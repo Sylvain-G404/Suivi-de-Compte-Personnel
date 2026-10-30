@@ -1,0 +1,702 @@
+[
+  {
+    "id": "1",
+    "date": "05/01/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "2",
+    "date": "06/01/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "3",
+    "date": "08/01/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "4",
+    "date": "10/01/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 64.5
+  },
+  {
+    "id": "5",
+    "date": "15/01/2025",
+    "libelle": "RECHARGE TRANSPORTS",
+    "rentree": null,
+    "depense": 30
+  },
+  {
+    "id": "6",
+    "date": "25/01/2025",
+    "libelle": "RETRAIT DISTRIBUTEUR",
+    "rentree": null,
+    "depense": 40
+  },
+  {
+    "id": "7",
+    "date": "05/02/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "8",
+    "date": "06/02/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "9",
+    "date": "09/02/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "10",
+    "date": "12/02/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 58.2
+  },
+  {
+    "id": "11",
+    "date": "20/02/2025",
+    "libelle": "RESTAURANT SUSHIS",
+    "rentree": null,
+    "depense": 24.5
+  },
+  {
+    "id": "12",
+    "date": "05/03/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "13",
+    "date": "06/03/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "14",
+    "date": "08/03/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "15",
+    "date": "15/03/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 71.1
+  },
+  {
+    "id": "16",
+    "date": "05/04/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "17",
+    "date": "06/04/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "18",
+    "date": "08/04/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "19",
+    "date": "11/04/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 63.4
+  },
+  {
+    "id": "20",
+    "date": "18/04/2025",
+    "libelle": "BOULANGERIE",
+    "rentree": null,
+    "depense": 8.5
+  },
+  {
+    "id": "21",
+    "date": "05/05/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "22",
+    "date": "06/05/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "23",
+    "date": "08/05/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "24",
+    "date": "10/05/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 55
+  },
+  {
+    "id": "25",
+    "date": "05/06/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "26",
+    "date": "06/06/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "27",
+    "date": "08/06/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "28",
+    "date": "14/06/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 69.8
+  },
+  {
+    "id": "29",
+    "date": "22/06/2025",
+    "libelle": "RETRAIT DISTRIBUTEUR",
+    "rentree": null,
+    "depense": 20
+  },
+  {
+    "id": "30",
+    "date": "05/07/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "31",
+    "date": "06/07/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "32",
+    "date": "08/07/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "33",
+    "date": "12/07/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 61.2
+  },
+  {
+    "id": "34",
+    "date": "05/08/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "35",
+    "date": "06/08/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "36",
+    "date": "08/08/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "37",
+    "date": "11/08/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 59.4
+  },
+  {
+    "id": "38",
+    "date": "15/08/2025",
+    "libelle": "ESSENCE TOTAL",
+    "rentree": null,
+    "depense": 45
+  },
+  {
+    "id": "39",
+    "date": "05/09/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "40",
+    "date": "06/09/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "41",
+    "date": "08/09/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "42",
+    "date": "10/09/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 67.3
+  },
+  {
+    "id": "43",
+    "date": "05/10/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "44",
+    "date": "06/10/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "45",
+    "date": "08/10/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "46",
+    "date": "12/10/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 52.8
+  },
+  {
+    "id": "47",
+    "date": "18/10/2025",
+    "libelle": "PHARMACIE",
+    "rentree": null,
+    "depense": 14.2
+  },
+  {
+    "id": "48",
+    "date": "05/11/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "49",
+    "date": "06/11/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "50",
+    "date": "08/11/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "51",
+    "date": "14/11/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 66.5
+  },
+  {
+    "id": "52",
+    "date": "05/12/2025",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1450,
+    "depense": null
+  },
+  {
+    "id": "53",
+    "date": "06/12/2025",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 420
+  },
+  {
+    "id": "54",
+    "date": "08/12/2025",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 12.99
+  },
+  {
+    "id": "55",
+    "date": "11/12/2025",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 78.4
+  },
+  {
+    "id": "56",
+    "date": "20/12/2025",
+    "libelle": "CADEAU NOEL",
+    "rentree": null,
+    "depense": 45.2
+  },
+  {
+    "id": "57",
+    "date": "05/01/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "58",
+    "date": "06/01/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "59",
+    "date": "08/01/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "60",
+    "date": "10/01/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 68
+  },
+  {
+    "id": "61",
+    "date": "15/01/2026",
+    "libelle": "RECHARGE TRANSPORTS",
+    "rentree": null,
+    "depense": 32
+  },
+  {
+    "id": "62",
+    "date": "05/02/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "63",
+    "date": "06/02/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "64",
+    "date": "09/02/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "65",
+    "date": "12/02/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 62.5
+  },
+  {
+    "id": "66",
+    "date": "05/03/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "67",
+    "date": "06/03/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "68",
+    "date": "08/03/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "69",
+    "date": "15/03/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 74.3
+  },
+  {
+    "id": "70",
+    "date": "05/04/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "71",
+    "date": "06/04/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "72",
+    "date": "08/04/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "73",
+    "date": "11/04/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 65.1
+  },
+  {
+    "id": "74",
+    "date": "24/04/2026",
+    "libelle": "RETRAIT DISTRIBUTEUR",
+    "rentree": null,
+    "depense": 30
+  },
+  {
+    "id": "75",
+    "date": "05/05/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "76",
+    "date": "06/05/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "77",
+    "date": "08/05/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "78",
+    "date": "10/05/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 59.9
+  },
+  {
+    "id": "79",
+    "date": "05/06/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "80",
+    "date": "06/06/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "81",
+    "date": "08/06/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "82",
+    "date": "14/06/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 72.5
+  },
+  {
+    "id": "83",
+    "date": "05/07/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "84",
+    "date": "06/07/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "85",
+    "date": "08/07/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "86",
+    "date": "12/07/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 64
+  },
+  {
+    "id": "87",
+    "date": "05/08/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "88",
+    "date": "06/08/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "89",
+    "date": "08/08/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "90",
+    "date": "11/08/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 61.8
+  },
+  {
+    "id": "91",
+    "date": "19/08/2026",
+    "libelle": "CINEMA PARADISO",
+    "rentree": null,
+    "depense": 11.5
+  },
+  {
+    "id": "92",
+    "date": "05/09/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "93",
+    "date": "06/09/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "94",
+    "date": "08/09/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "95",
+    "date": "10/09/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 70.2
+  },
+  {
+    "id": "96",
+    "date": "05/10/2026",
+    "libelle": "VERSEMENT SALAIRE",
+    "rentree": 1480,
+    "depense": null
+  },
+  {
+    "id": "97",
+    "date": "06/10/2026",
+    "libelle": "LOYER RESIDENCE",
+    "rentree": null,
+    "depense": 430
+  },
+  {
+    "id": "98",
+    "date": "08/10/2026",
+    "libelle": "ABONNEMENT STREAMING",
+    "rentree": null,
+    "depense": 13.99
+  },
+  {
+    "id": "99",
+    "date": "12/10/2026",
+    "libelle": "SUPERMARCHE AUCHAN",
+    "rentree": null,
+    "depense": 56.4
+  },
+  {
+    "id": "1793363244685",
+    "date": "30/10/2026",
+    "libelle": "TABAC",
+    "rentree": null,
+    "depense": 158.66
+  }
+]

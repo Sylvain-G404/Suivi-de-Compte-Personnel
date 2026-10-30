@@ -1,0 +1,11 @@
+# Dépendances Node.js (Indispensable pour éviter d'envoyer des milliers de fichiers)
+node_modules/
+package-lock.json
+
+
+# Scripts de structure et utilitaires Windows locaux
+generate_structure_V2.bat
+
+# Fichiers systèmes ou de configuration d'éditeurs
+.DS_Store
+.vscode/

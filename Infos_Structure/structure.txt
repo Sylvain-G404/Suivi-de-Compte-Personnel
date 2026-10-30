@@ -1,0 +1,24 @@
+﻿C:.\Suivi de Compte (GitHub)
+|   .gitignore
+|   generate_structure_V2.bat
+|   human.txt
+|   index.html
+|   lancer_app.bat
+|   package.json
+|   package-lock.json
+|   README.md
+|   server.js
++---Assets
+|   \---Favicon
+|       |   Favicon.K.sf.blanc.png
+|       \---Favicon.K.sf.png
++---Data
+|   \---data.json
++---Infos_Structure
++---JavaScript
+|   \---main.js
++---node_modules
++---Screen_Site
+|   \---Screenshot 2026-10-30 at 13-50-03 Suivi du Compte Bancaire.png
+\---Style
+    \---style.css

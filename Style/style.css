@@ -1,0 +1,373 @@
+/* --- Variables globales & Reset --- */
+:root {
+    --bg-main: #0a0a0a;
+    --bg-card: #141414;
+    --bg-stripe: #1c1c1c;
+    --border-color: #2d2d2d;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent-green: #2ecc71;
+    --accent-red: #e74c3c;
+    --accent-orange: #f39c12;
+    --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Classe utilitaire globale pour masquer les éléments */
+.is-hidden {
+    display: none !important;
+}
+
+/* --- Header & Solde --- */
+.account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.global-balance {
+    background-color: var(--bg-card);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 1.2rem;
+}
+
+.global-balance .label {
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+}
+
+.global-balance .amount {
+    font-weight: bold;
+}
+
+/* --- Barre de contrôle (Boutons + Sélecteur d'année) --- */
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filters select {
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* --- Design des Boutons d'Action --- */
+.btn {
+    font-family: var(--font-stack);
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: opacity 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary { background-color: #3498db; color: white; }
+.btn-warning { background-color: var(--accent-orange); color: black; }
+.btn-danger { background-color: var(--accent-red); color: white; }
+.btn-success { background-color: var(--accent-green); color: black; }
+.btn-secondary { background-color: #333; color: white; border: 1px solid var(--border-color); }
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* --- Badge de Notification des Modes Actifs --- */
+.mode-badge {
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.95rem;
+}
+.mode-badge.edit-mode { 
+    background-color: rgba(243, 156, 18, 0.15); 
+    color: var(--accent-orange); 
+    border: 1px solid var(--accent-orange); 
+}
+.mode-badge.delete-mode { 
+    background-color: rgba(231, 76, 60, 0.15); 
+    color: var(--accent-red); 
+    border: 1px solid var(--accent-red); 
+}
+
+/* --- POP-UP MODALE (FORMULAIRE) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.modal-content h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content input[type="number"] {
+    width: 100%;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* --- COMMUTATEUR ON/OFF (ENTRÉE / DÉPENSE) --- */
+.toggle-container { display: inline-block; }
+.toggle-input { display: none; }
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e74c3c;
+    width: 180px;
+    height: 38px;
+    border-radius: 20px;
+    padding: 0 12px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+    line-height: normal;
+}
+.toggle-button {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.toggle-text-depense, .toggle-text-entree {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.toggle-text-entree { opacity: 0.4; }
+.toggle-input:checked + .toggle-label { background-color: #2ecc71; }
+.toggle-input:checked + .toggle-label .toggle-button { transform: translateX(142px); }
+.toggle-input:checked + .toggle-label .toggle-text-depense { opacity: 0.4; }
+.toggle-input:checked + .toggle-label .toggle-text-entree { opacity: 1; }
+
+/* --- Structures des Blocs Mensuels (Fieldsets) --- */
+.month-fieldset {
+    display: block !important; /* Force le bloc du mois à rester visible sur la page */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.month-fieldset legend {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.75rem;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.month-fieldset legend:hover {
+    color: var(--accent-green);
+    background-color: #1a1a1a;
+}
+
+.toggle-arrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--accent-red);
+    transition: transform 0.3s ease;
+}
+
+/* ─── LOGIQUE DE L'ACCORDÉON SUR LE TABLEAU UNIQUEMENT ─── */
+.month-fieldset.is-hidden .table-responsive { 
+    display: none !important; 
+}
+.month-fieldset.is-hidden .toggle-arrow { 
+    transform: rotate(-90deg); 
+}
+
+.month-fieldset.is-active .table-responsive { 
+    display: block !important; 
+}
+.month-fieldset.is-active .toggle-arrow { 
+    transform: rotate(0deg); 
+}
+
+/* --- Tableau des Transactions --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.transaction-table th, 
+.transaction-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-table th {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.transaction-table tbody tr:nth-child(even) {
+    background-color: var(--bg-stripe);
+}
+
+.transaction-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* --- EFFETS INTERACTIFS SUR LES LIGNES --- */
+body.mode-edit-active .transaction-table tbody tr,
+body.mode-delete-active .transaction-table tbody tr {
+    cursor: pointer;
+}
+body.mode-edit-active .transaction-table tbody tr:hover {
+    background-color: rgba(243, 156, 18, 0.15) !important;
+    outline: 1px solid var(--accent-orange);
+}
+body.mode-delete-active .transaction-table tbody tr:hover {
+    background-color: rgba(231, 76, 60, 0.2) !important;
+    outline: 1px solid var(--accent-red);
+}
+
+/* --- Résumé / Footer du mois (Reste toujours visible) --- */
+.month-summary {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.summary-item {
+    font-size: 0.95rem;
+}
+.summary-item span:first-child {
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+}
+.summary-item.total {
+    font-weight: bold;
+    font-size: 1.05rem;
+    border-left: 2px solid var(--border-color);
+    padding-left: 1rem;
+}
+
+.text-green { color: var(--accent-green); }
+.text-red { color: var(--accent-red); }

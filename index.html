@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- NOUVEAU : Donne la permission au navigateur de se connecter à localhost:3000 -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' http://localhost:3000;"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="Assets/Favicon/Favicon.K.sf.blanc.png" type="image/x-icon" />
+    <title>Suivi du Compte Bancaire</title>
+    <link rel="stylesheet" href="Style/style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- En-tête -->
+      <header class="account-header">
+        <h1>Suivi de Compte</h1>
+        <div class="global-balance">
+          <span class="label">Solde Actuel :</span>
+          <span id="global-balance-amount" class="amount">0.00 €</span>
+        </div>
+      </header>
+
+      <section class="control-panel">
+        <div class="action-buttons">
+          <button id="btn-main-add" class="btn btn-primary">➕ Ajouter</button>
+          <button id="btn-main-edit" class="btn btn-warning">📝 Modifier</button>
+          <button id="btn-main-delete" class="btn btn-danger">🗑️ Supprimer</button>
+        </div>
+        <div class="filters">
+          <label for="year-select">Année :</label>
+          <select id="year-select"></select>
+        </div>
+      </section>
+
+      <!-- Message d'information sur le mode actif -->
+      <div id="mode-badge" class="mode-badge is-hidden"></div>
+
+      <!-- Conteneur des blocs Mensuels -->
+      <section id="account-records" class="account-records"></section>
+    </main>
+
+    <!-- ─── POP-UP MODALE : FORMULAIRE (AJOUT / MODIFICATION) ─── -->
+    <div id="transaction-modal" class="modal-overlay is-hidden">
+      <div class="modal-content">
+        <h3 id="modal-title">Nouvelle Opération</h3>
+        <form id="transaction-form" class="transaction-form">
+          <!-- ID masqué pour savoir si on modifie une ligne existante -->
+          <input type="hidden" id="tx-id" />
+
+          <div class="form-group">
+            <label>Type d'opération :</label>
+            <div class="toggle-container">
+              <input type="checkbox" id="type-toggle" class="toggle-input" />
+              <label for="type-toggle" class="toggle-label">
+                <span class="toggle-text-depense">Dépense</span>
+                <span class="toggle-button"></span>
+                <span class="toggle-text-entree">Entrée</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tx-date">Date :</label>
+            <input type="date" id="tx-date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="tx-libelle">Libellé :</label>
+            <input type="text" id="tx-libelle" placeholder="Ex: Courses Carrefour" required />
+          </div>
+
+          <div class="form-group">
+            <label for="tx-montant">Montant (€) :</label>
+            <input type="number" id="tx-montant" step="0.01" min="0.01" placeholder="0.00" required />
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-success">Enregistrer</button>
+            <button type="button" id="btn-modal-cancel" class="btn btn-secondary">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ─── TEMPLATE DU MOIS ─── -->
+    <template id="month-template">
+      <fieldset class="month-fieldset">
+        <legend class="month-title">
+          <span class="month-name-text">Mois Année</span>
+          <span class="toggle-arrow">▼</span>
+        </legend>
+
+        <div class="table-responsive">
+          <table class="transaction-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Libellé</th>
+                <th>Entrée</th>
+                <th>Dépense</th>
+                <th>Solde</th>
+              </tr>
+            </thead>
+            <tbody class="transaction-tbody"></tbody>
+          </table>
+        </div>
+
+        <footer class="month-summary">
+          <div class="summary-item">
+            <span>Total Dépenses :</span>
+            <span class="month-total-expenses">0.00 €</span>
+          </div>
+          <div class="summary-item">
+            <span>+/- Du Mois :</span>
+            <span class="month-diff">0.00 €</span>
+          </div>
+          <div class="summary-item total">
+            <span>Solde final :</span>
+            <span class="month-final-balance">0.00 €</span>
+          </div>
+        </footer>
+      </fieldset>
+    </template>
+
+    <script src="JavaScript/main.js"></script>
+  </body>
+</html>
