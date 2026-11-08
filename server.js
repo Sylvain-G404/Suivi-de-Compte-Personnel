@@ -29,6 +29,31 @@ app.use((req, res, next) => {
 app.get('/favicon.ico', (_, res) => res.status(204).end());
 
 // ==========================================
+//   Liste les années existantes sur le disque
+// ==========================================
+app.get('/api/years', (req, res) => {
+    const dataDir = path.join(__dirname, 'Data');
+    
+    // Lit le dossier Data
+    fs.readdir(dataDir, (err, files) => {
+        if (err) {
+            return res.json([new Date().getFullYear()]); // Sécurité : renvoie l'année en cours si erreur
+        }
+        
+        // Filtre les fichiers pour trouver les "data-AAAA.json" et extraire l'année
+        const years = files
+            .filter(file => file.startsWith('data-') && file.endsWith('.json'))
+            .map(file => {
+                const match = file.match(/data-(\d{4})\.json/);
+                return match ? parseInt(match[1]) : null;
+            })
+            .filter(year => year !== null);
+            
+        res.json(years);
+    });
+});
+
+// ==========================================
 //   Récupération des transactions par année (avec création auto)
 // ==========================================
 app.get('/api/transactions/:year', (req, res) => {

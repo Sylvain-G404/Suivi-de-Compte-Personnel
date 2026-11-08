@@ -26,17 +26,27 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadTransactions() {
     try {
         const year = activeYearFilter || String(new Date().getFullYear());
-
+        
+        // 1. Récupère les transactions de l'année active
         const response = await fetch(`/api/transactions/${year}`);
         if (!response.ok) throw new Error("Erreur lors de la récupération des données.");
-
         const data = await response.json();
-
+        
         globalTransactions = data.operations || [];
         window.initialBalance = data.soldeInitial || 0;
-
-        refreshUI();
-
+        
+        // 2. Demande au serveur la liste des vraies années existantes sur le disque
+        const yearsResponse = await fetch('/api/years');
+        let availableYears = [parseInt(year)];
+        if (yearsResponse.ok) {
+            availableYears = await yearsResponse.json();
+        }
+        
+        // 3. Dessine l'interface et met à jour le sélecteur avec les vraies années
+        renderWithTemplate(globalTransactions);
+        updateYearSelect(availableYears, new Date().getFullYear());
+        initInteractions();
+        
     } catch (error) {
         console.error("Erreur d'initialisation de l'application :", error);
         alert("Impossible de charger les transactions depuis le serveur.");
@@ -413,27 +423,29 @@ async function saveTransactionsToServer() {
 }
 
 /**
- * Met à jour dynamiquement la liste déroulante des années avec historique et futur
+ * Met à jour dynamiquement la liste déroulante avec les fichiers réels du disque + le futur proche
  */
 function updateYearSelect(years, currentYear) {
     const yearSelect = document.getElementById("year-select");
     if (!yearSelect) return;
 
     const previouslySelected = yearSelect.value;
+    
+    // On utilise un Set pour stocker les vraies années détectées par le serveur
     const uniqueYears = new Set(years.map(y => String(y)));
     
-    // ➔ SÉCURITÉ : On force l'historique depuis la création du compte (2024) jusqu'au futur (currentYear + 1)
-    for (let y = 2024; y <= currentYear + 1; y++) {
-        uniqueYears.add(String(y));
-    }
+    // On force la présence de l'année en cours et de l'année suivante pour pouvoir avancer
+    uniqueYears.add(String(currentYear));
+    uniqueYears.add(String(currentYear + 1));
 
     yearSelect.innerHTML = ""; 
     
+    // Génère les options triées du plus récent au plus ancien
     Array.from(uniqueYears).sort((a, b) => b - a).forEach(year => {
         const option = document.createElement("option");
         option.value = year;
         option.textContent = year;
-        
+
         if (previouslySelected ? year === previouslySelected : parseInt(year) === currentYear) {
             option.selected = true;
         }
