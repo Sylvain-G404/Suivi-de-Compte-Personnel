@@ -1,0 +1,649 @@
+{
+  "soldeInitial": 500,
+  "operations": [
+    {
+      "id": "2024-01-01",
+      "date": "01/01/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-01-02",
+      "date": "05/01/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-01-03",
+      "date": "06/01/2024",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 78.5
+    },
+    {
+      "id": "2024-01-04",
+      "date": "10/01/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 124.32
+    },
+    {
+      "id": "2024-01-05",
+      "date": "12/01/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-01-06",
+      "date": "15/01/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-01-07",
+      "date": "20/01/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 98.15
+    },
+    {
+      "id": "2024-01-08",
+      "date": "25/01/2024",
+      "libelle": "Restaurant",
+      "rentree": null,
+      "depense": 45
+    },
+    {
+      "id": "2024-02-01",
+      "date": "01/02/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-02-02",
+      "date": "05/02/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-02-03",
+      "date": "08/02/2024",
+      "libelle": "Assurance Auto",
+      "rentree": null,
+      "depense": 45.2
+    },
+    {
+      "id": "2024-02-04",
+      "date": "10/02/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 142.1
+    },
+    {
+      "id": "2024-02-05",
+      "date": "12/02/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-02-06",
+      "date": "15/02/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-02-07",
+      "date": "22/02/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 87.45
+    },
+    {
+      "id": "2024-02-08",
+      "date": "28/02/2024",
+      "libelle": "Cinéma",
+      "rentree": null,
+      "depense": 24
+    },
+    {
+      "id": "2024-03-01",
+      "date": "01/03/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-03-02",
+      "date": "05/03/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-03-03",
+      "date": "06/03/2024",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 78.5
+    },
+    {
+      "id": "2024-03-04",
+      "date": "11/03/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 115.6
+    },
+    {
+      "id": "2024-03-05",
+      "date": "12/03/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-03-06",
+      "date": "15/03/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-03-07",
+      "date": "20/03/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 102.3
+    },
+    {
+      "id": "2024-03-08",
+      "date": "25/03/2024",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 65.4
+    },
+    {
+      "id": "2024-04-01",
+      "date": "01/04/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-04-02",
+      "date": "05/04/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-04-03",
+      "date": "09/04/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 130.25
+    },
+    {
+      "id": "2024-04-04",
+      "date": "12/04/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-04-05",
+      "date": "15/04/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-04-06",
+      "date": "23/04/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 91.1
+    },
+    {
+      "id": "2024-04-07",
+      "date": "27/04/2024",
+      "libelle": "Boulangerie",
+      "rentree": null,
+      "depense": 12.5
+    },
+    {
+      "id": "2024-05-01",
+      "date": "01/05/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-05-02",
+      "date": "05/05/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-05-03",
+      "date": "06/05/2024",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 78.5
+    },
+    {
+      "id": "2024-05-04",
+      "date": "10/05/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 118.9
+    },
+    {
+      "id": "2024-05-05",
+      "date": "12/05/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-05-06",
+      "date": "15/05/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-05-07",
+      "date": "22/05/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 105.4
+    },
+    {
+      "id": "2024-05-08",
+      "date": "28/05/2024",
+      "libelle": "Pharmacie",
+      "rentree": null,
+      "depense": 18.2
+    },
+    {
+      "id": "2024-06-01",
+      "date": "01/06/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-06-02",
+      "date": "05/06/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-06-03",
+      "date": "11/06/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 122.5
+    },
+    {
+      "id": "2024-06-04",
+      "date": "12/06/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-06-05",
+      "date": "15/06/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-06-06",
+      "date": "20/06/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 95
+    },
+    {
+      "id": "2024-06-07",
+      "date": "26/06/2024",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 68.1
+    },
+    {
+      "id": "2024-07-01",
+      "date": "01/07/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-07-02",
+      "date": "05/07/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-07-03",
+      "date": "06/07/2024",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 85.2
+    },
+    {
+      "id": "2024-07-04",
+      "date": "10/07/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 140.35
+    },
+    {
+      "id": "2024-07-05",
+      "date": "12/07/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-07-06",
+      "date": "15/07/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-07-07",
+      "date": "24/07/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 89.9
+    },
+    {
+      "id": "2024-07-08",
+      "date": "29/07/2024",
+      "libelle": "Achat Vêtements H&M",
+      "rentree": null,
+      "depense": 54.99
+    },
+    {
+      "id": "2024-08-01",
+      "date": "01/08/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-08-02",
+      "date": "05/08/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-08-03",
+      "date": "12/08/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-08-04",
+      "date": "14/08/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 110.2
+    },
+    {
+      "id": "2024-08-05",
+      "date": "15/08/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-08-06",
+      "date": "22/08/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 97.4
+    },
+    {
+      "id": "2024-08-07",
+      "date": "28/08/2024",
+      "libelle": "Fast Food",
+      "rentree": null,
+      "depense": 15.8
+    },
+    {
+      "id": "2024-09-01",
+      "date": "01/09/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-09-02",
+      "date": "05/09/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-09-03",
+      "date": "06/09/2024",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 85.2
+    },
+    {
+      "id": "2024-09-04",
+      "date": "09/09/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 135.6
+    },
+    {
+      "id": "2024-09-05",
+      "date": "12/09/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-09-06",
+      "date": "15/09/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-09-07",
+      "date": "23/09/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 104.15
+    },
+    {
+      "id": "2024-09-08",
+      "date": "27/09/2024",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 64.2
+    },
+    {
+      "id": "2024-10-01",
+      "date": "01/10/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-10-02",
+      "date": "05/10/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-10-03",
+      "date": "10/10/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 128.9
+    },
+    {
+      "id": "2024-10-04",
+      "date": "12/10/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-10-05",
+      "date": "15/10/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-10-06",
+      "date": "24/10/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 92.5
+    },
+    {
+      "id": "2024-10-07",
+      "date": "30/10/2024",
+      "libelle": "Coiffeur",
+      "rentree": null,
+      "depense": 25
+    },
+    {
+      "id": "2024-11-01",
+      "date": "01/11/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-11-02",
+      "date": "05/11/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-11-03",
+      "date": "06/11/2024",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 85.2
+    },
+    {
+      "id": "2024-11-04",
+      "date": "12/11/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-11-05",
+      "date": "14/11/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 141.8
+    },
+    {
+      "id": "2024-11-06",
+      "date": "15/11/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-11-07",
+      "date": "22/11/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 88.6
+    },
+    {
+      "id": "2024-11-08",
+      "date": "26/11/2024",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 66.8
+    },
+    {
+      "id": "2024-12-01",
+      "date": "01/12/2024",
+      "libelle": "Salaire Net",
+      "rentree": 2200,
+      "depense": null
+    },
+    {
+      "id": "2024-12-02",
+      "date": "05/12/2024",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 650
+    },
+    {
+      "id": "2024-12-03",
+      "date": "10/12/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 155.4
+    },
+    {
+      "id": "2024-12-04",
+      "date": "12/12/2024",
+      "libelle": "Abonnement Netflix",
+      "rentree": null,
+      "depense": 13.49
+    },
+    {
+      "id": "2024-12-05",
+      "date": "15/12/2024",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 35.99
+    },
+    {
+      "id": "2024-12-06",
+      "date": "20/12/2024",
+      "libelle": "Cadeaux Noël Amazon",
+      "rentree": null,
+      "depense": 120.5
+    },
+    {
+      "id": "2024-12-07",
+      "date": "22/12/2024",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 112.3
+    },
+    {
+      "id": "2024-12-08",
+      "date": "24/12/2024",
+      "libelle": "Prime Noël Entreprise",
+      "rentree": 350,
+      "depense": null
+    }
+  ]
+}

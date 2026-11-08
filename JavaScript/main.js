@@ -5,34 +5,51 @@ const monthNames = [
 
 let globalTransactions = [];
 let currentMode = "normal"; 
+let isSaving = false;
+let activeYearFilter = String(new Date().getFullYear());
+
+//  Le formatteur monétaire officiel français
+const moneyFormatter = new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     loadTransactions();
 });
 
-/**
- * Récupère les données depuis le serveur de développement local
- */
+// ==========================================
+//   Charge les données depuis le serveur par année
+// ==========================================
 async function loadTransactions() {
     try {
-        // On interroge notre mini-serveur node
-        const response = await fetch('http://localhost:3000/api/transactions'); 
-        if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
-        
-        globalTransactions = await response.json();
+        const year = activeYearFilter || String(new Date().getFullYear());
+
+        const response = await fetch(`/api/transactions/${year}`);
+        if (!response.ok) throw new Error("Erreur lors de la récupération des données.");
+
+        const data = await response.json();
+
+        globalTransactions = data.operations || [];
+        window.initialBalance = data.soldeInitial || 0;
+
         refreshUI();
-        initInteractions();
+
     } catch (error) {
-        console.error("Erreur de chargement des transactions :", error);
-        document.getElementById("account-records").innerHTML = 
-            `<p class="text-red">Erreur : Assure-toi d'avoir lancé le serveur Node (node server.js).</p>`;
+        console.error("Erreur d'initialisation de l'application :", error);
+        alert("Impossible de charger les transactions depuis le serveur.");
     }
 }
 
+// ==========================================
+//   Rafraîchit l'affichage graphique
+// ==========================================
 function refreshUI() {
-    renderWithTemplate(globalTransactions);
+    initInteractions(); // 1. Nettoie et prépare les structures globales
+    renderWithTemplate(globalTransactions); // 2. Dessine les lignes et attache les clics handleRowClick
 }
-
 
 /**
  * Lit les données, effectue les calculs comptables et clone le template HTML
@@ -42,14 +59,24 @@ function renderWithTemplate(data) {
     const template = document.getElementById("month-template");
     container.innerHTML = ""; 
 
-    const currentYear = 2026;
-    const currentMonthIndex = 9; // Octobre
+    // Dynamisation de la date du jour pour l'ouverture automatique du bon bloc
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const currentMonthIndex = today.getMonth(); // Dynamique (0 = Janvier, 11 = Décembre)
 
     const structuredData = {};
-    let runningBalance = 0;
+    let runningBalance = window.initialBalance || 0;
 
-    // 1. Tri chronologique de base et calcul du solde glissant continu (indispensable dans ce sens)
-    data.forEach(tx => {
+    // ─── ÉTAPE DE TRI CHRONOLOGIQUE CRITIQUE ───
+    // Trie toutes les transactions du plus ancien au plus récent avant tout calcul de solde
+    const sortedData = data.slice().sort((a, b) => {
+        const [dayA, monthA, yearA] = a.date.split("/");
+        const [dayB, monthB, yearB] = b.date.split("/");
+        return new Date(yearA, monthA - 1, dayA) - new Date(yearB, monthB - 1, dayB);
+    });
+
+    // 1. Calcul du solde glissant continu sur les données triées
+    sortedData.forEach(tx => {
         const [_, monthStr, yearStr] = tx.date.split("/");
         const year = parseInt(yearStr);
         const monthIndex = parseInt(monthStr) - 1;
@@ -70,9 +97,11 @@ function renderWithTemplate(data) {
     // 2. Injection du solde final global dans le Header principal
     const globalBalanceEl = document.getElementById("global-balance-amount");
     if (globalBalanceEl) {
-        globalBalanceEl.textContent = `${runningBalance.toFixed(2)} €`;
+        // ➔ MODIFICATION : Habillage automatique en format français (Ex: 4 249,71 €)
+        globalBalanceEl.textContent = moneyFormatter.format(runningBalance);
         globalBalanceEl.className = `amount ${runningBalance >= 0 ? 'text-green' : 'text-red'}`;
     }
+
 
     // 3. Boucle sur les années et les mois pour cloner le Template
     Object.keys(structuredData).sort().forEach(year => {
@@ -81,18 +110,18 @@ function renderWithTemplate(data) {
         yearGroup.setAttribute("data-year", year);
         
         const yearSelect = document.getElementById("year-select");
-        let activeYearFilter = String(currentYear);
         if (yearSelect && yearSelect.value) {
-            activeYearFilter = yearSelect.value;
+            activeYearFilter = yearSelect.value; // ➔ Met à jour la variable globale directement !
         }
-        
+
         if (year !== activeYearFilter) {
             yearGroup.style.display = "none";
         }
 
-        // Tri inversé (b - a) pour avoir les mois récents en haut
+        // Tri inversé (b - a) pour avoir les mois récents en haut de la page
         Object.keys(structuredData[year]).sort((a, b) => b - a).forEach(monthIdx => {
             const monthTransactions = structuredData[year][monthIdx];
+            // Détection dynamique du mois en cours
             const isCurrentMonth = (parseInt(year) === currentYear && parseInt(monthIdx) === currentMonthIndex);
             
             let totalExpenses = 0;
@@ -115,22 +144,22 @@ function renderWithTemplate(data) {
             titleEl.innerHTML = `<span class="month-name-text">${monthNames[monthIdx]} ${year}</span> <span class="toggle-arrow">▼</span>`;
 
             const tbody = clone.querySelector(".transaction-tbody");
-            
-            // ─── MODIFICATION ICI : On applique .slice().reverse() ───
-            // Le .slice() permet de copier le tableau pour ne pas casser l'ordre des calculs du solde global
+
+            // Rendu inversé pour afficher l'opération la plus récente en haut du tableau du mois
             monthTransactions.slice().reverse().forEach(tx => {
                 const tr = document.createElement("tr");
                 tr.setAttribute("data-id", tx.id);
-                
-                const entreeText = tx.rentree ? `<span class="text-green">+${tx.rentree.toFixed(2)} €</span>` : "-";
-                const depenseText = tx.depense ? `<span class="text-red">-${tx.depense.toFixed(2)} €</span>` : "-";
-                
+
+                // ➔ MODIFICATION : Habillage des montants de la ligne au format français
+                const entreeText = tx.rentree ? `+ ${moneyFormatter.format(tx.rentree)}` : "-";
+                const depenseText = tx.depense ? `- ${moneyFormatter.format(tx.depense)}` : "-";
+
                 tr.innerHTML = `
                     <td>${tx.date}</td>
                     <td>${tx.libelle}</td>
-                    <td>${entreeText}</td>
-                    <td>${depenseText}</td>
-                    <td>${tx.calculatedSolde.toFixed(2)} €</td>
+                    <td class="${tx.rentree ? 'text-green' : ''}">${entreeText}</td>
+                    <td class="${tx.depense ? 'text-red' : ''}">${depenseText}</td>
+                    <td>${moneyFormatter.format(tx.calculatedSolde)}</td>
                 `;
 
                 tr.addEventListener("click", () => {
@@ -138,16 +167,22 @@ function renderWithTemplate(data) {
                         handleRowClick(tx.id);
                     }
                 });
-                tbody.appendChild(tr);
+                tbody.appendChild(tr); // Retient uniquement celle-ci qui est la bonne !
             });
 
-            clone.querySelector(".month-total-expenses").textContent = `-${totalExpenses.toFixed(2)} €`;
-            
+            // ➔ MODIFICATION : Format français pour le total des dépenses du mois
+            clone.querySelector(".month-total-expenses").textContent = `-${moneyFormatter.format(totalExpenses)}`;
+
+            // ➔ MODIFICATION : Habillage du total du mois en français avec conservation du signe "+"
             const diffEl = clone.querySelector(".month-diff");
-            diffEl.textContent = `${monthlyDiff >= 0 ? '+' : ''}${monthlyDiff.toFixed(2)} €`;
+            const formattedDiff = moneyFormatter.format(Math.abs(monthlyDiff)); // Calcule la valeur absolue sans le signe -
+
+            diffEl.textContent = `${monthlyDiff >= 0 ? '+' : '-'}${formattedDiff}`;
             diffEl.className = monthlyDiff >= 0 ? "text-green" : "text-red";
-            
-            clone.querySelector(".month-final-balance").textContent = `${finalMonthBalance.toFixed(2)} €`;
+
+
+            // ➔ MODIFICATION : Format français pour le solde final du mois
+            clone.querySelector(".month-final-balance").textContent = moneyFormatter.format(finalMonthBalance);
 
             yearGroup.appendChild(clone);
         });
@@ -158,43 +193,51 @@ function renderWithTemplate(data) {
     updateYearSelect(Object.keys(structuredData), currentYear);
 }
 
-
-
 /**
  * Configure les écouteurs de clics (Accordéon) et de filtres (Année)
  */
 function initInteractions() {
-    // Écouteur pour ouvrir/fermer le tableau d'un mois
-    document.getElementById("account-records").addEventListener("click", (e) => {
-        const title = e.target.closest(".month-title");
-        if (title) {
-            const currentFieldset = title.closest(".month-fieldset");
-            if (currentFieldset.classList.contains("is-active")) {
-                currentFieldset.classList.replace("is-active", "is-hidden");
-            } else {
-                currentFieldset.classList.replace("is-hidden", "is-active");
+    // Écouteur global pour ouvrir/fermer le tableau d'un mois (Délégation d'événement)
+    const accountRecords = document.getElementById("account-records");
+    if (accountRecords && !accountRecords.dataset.hasListener) {
+        accountRecords.addEventListener("click", (e) => {
+            const title = e.target.closest(".month-title");
+            if (title) {
+                const currentFieldset = title.closest(".month-fieldset");
+                if (currentFieldset.classList.contains("is-active")) {
+                    currentFieldset.classList.replace("is-active", "is-hidden");
+                } else {
+                    currentFieldset.classList.replace("is-hidden", "is-active");
+                }
             }
-        }
-    });
+        });
+        accountRecords.dataset.hasListener = "true"; // Sécurité anti-doublon
+    }
 
     // Filtre sélecteur d'année
     const yearSelect = document.getElementById("year-select");
     if (yearSelect) {
-        yearSelect.addEventListener("change", (e) => {
-            const selectedYear = e.target.value;
-            document.querySelectorAll(".year-group").forEach(group => {
-                group.style.display = group.getAttribute("data-year") === selectedYear ? "block" : "none";
-            });
-        });
+        yearSelect.onchange = (e) => {
+            activeYearFilter = e.target.value;
+            loadTransactions(); // Recharge le bon fichier JSON
+        };
     }
 
-    // Gestion de la barre d'action supérieure
-    document.getElementById("btn-main-add").addEventListener("click", () => setMode("add"));
-    document.getElementById("btn-main-edit").addEventListener("click", () => setMode("edit"));
-    document.getElementById("btn-main-delete").addEventListener("click", () => setMode("delete"));
-    document.getElementById("btn-modal-cancel").addEventListener("click", closeModal);
-    document.getElementById("transaction-form").addEventListener("submit", handleFormSubmit);
+    // Gestion de la barre d'action supérieure (Boutons statiques)
+    const btnAdd = document.getElementById("btn-main-add");
+    const btnEdit = document.getElementById("btn-main-edit");
+    const btnDelete = document.getElementById("btn-main-delete");
+    const btnCancel = document.getElementById("btn-modal-cancel");
+    const txForm = document.getElementById("transaction-form");
+
+    if (btnAdd) btnAdd.onclick = () => setMode("add");
+    if (btnEdit) btnEdit.onclick = () => setMode("edit");
+    if (btnDelete) btnDelete.onclick = () => setMode("delete");
+    if (btnCancel) btnCancel.onclick = closeModal;
+    if (txForm) txForm.onsubmit = handleFormSubmit;
 }
+
+
 
 /**
  * Configure le mode global actif (Couleur de survol sur les lignes du tableau)
@@ -233,6 +276,9 @@ function setMode(mode) {
                 badge.textContent = "Mode Suppression Actif 🗑️ : Cliquez sur une ligne de tableau pour la supprimer.";
             }
         }
+    } else if (mode === "normal") {
+        currentMode = "normal";
+        if (badge) badge.className = "mode-badge is-hidden";
     }
 }
 
@@ -248,7 +294,9 @@ function handleRowClick(id) {
     } else if (currentMode === "delete") {
         const confirmText = `Êtes-vous sûr de vouloir supprimer l'opération suivante ?\n\n➔ ${transaction.date} | ${transaction.libelle} | ${transaction.rentree ? '+' : '-'}${transaction.rentree || transaction.depense} €`;
         if (confirm(confirmText)) {
+            isSaving = true; 
             globalTransactions = globalTransactions.filter(t => t.id !== id);
+            setMode("normal");
             saveTransactionsToServer(); // ➔ Sauvegarde automatique après suppression !
         }
     }
@@ -309,34 +357,40 @@ function handleFormSubmit(e) {
     const [year, month, day] = rawDate.split("-");
     const formattedDate = `${day}/${month}/${year}`;
 
-    if (id) {
-        const txIndex = globalTransactions.findIndex(t => t.id === id);
-        if (txIndex !== -1) {
-            globalTransactions[txIndex] = {
-                id: id, date: formattedDate, libelle: libelle,
-                rentree: isEntree ? montant : null,
-                depense: !isEntree ? montant : null
-            };
-        }
-    } else {
-        const newTx = {
-            id: String(Date.now()), date: formattedDate, libelle: libelle,
-            rentree: isEntree ? montant : null,
-            depense: !isEntree ? montant : null
-        };
-        globalTransactions.push(newTx);
-    }
+    const newTx = {
+        id: id || String(Date.now()), 
+        date: formattedDate, 
+        libelle: libelle,
+        rentree: isEntree ? montant : null,
+        depense: !isEntree ? montant : null
+    };
 
     closeModal();
-    saveTransactionsToServer(); // ➔ Sauvegarde automatique après ajout/édition !
+
+    // ➔ Sécurité : Si l'opération appartient à l'année actuellement affichée
+    if (year && String(year) === activeYearFilter) {
+        if (id) {
+            const txIndex = globalTransactions.findIndex(t => t.id === id);
+            if (txIndex !== -1) globalTransactions[txIndex] = newTx;
+        } else {
+            globalTransactions.push(newTx);
+        }
+        saveTransactionsToServer();
+    } 
+    // ➔ Si l'opération est pour une AUTRE année, on l'envoie directement sans toucher au tableau actuel
+    else if (year) {
+        saveSingleTransactionToOtherYear(String(year), newTx);
+    }
 }
 
-/**
- * ─── NOUVELLE FONCTION : Envoie le tableau mis à jour au serveur ───
- */
+// ==========================================
+//   Envoie le tableau mis à jour au serveur par année
+// ==========================================
 async function saveTransactionsToServer() {
     try {
-        const response = await fetch('http://localhost:3000/api/transactions', {
+        const year = activeYearFilter || String(new Date().getFullYear());
+
+        const response = await fetch(`/api/transactions/${year}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -346,27 +400,69 @@ async function saveTransactionsToServer() {
 
         if (!response.ok) throw new Error("Erreur lors de la sauvegarde sur le serveur.");
         
-        // Si le serveur a bien écrit le fichier, on rafraîchit notre interface graphique
-        refreshUI();
+        // ➔ TRÈS IMPORTANT : On recharge proprement le fichier de l'année cible 
+        // pour récupérer le soldeInitial et toutes les opérations existantes triées
+        loadTransactions(); 
+        isSaving = false;
+        
     } catch (error) {
         console.error("Impossible de sauvegarder les modifications :", error);
         alert("Attention : Impossible d'enregistrer les données dans le fichier JSON.");
+        isSaving = false;
     }
 }
 
 /**
- * Met à jour dynamiquement la liste déroulante des années
+ * Met à jour dynamiquement la liste déroulante des années avec historique et futur
  */
 function updateYearSelect(years, currentYear) {
     const yearSelect = document.getElementById("year-select");
-    if (!yearSelect || yearSelect.options.length > 0) return;
+    if (!yearSelect) return;
 
-    yearSelect.innerHTML = "";
-    years.sort().forEach(year => {
+    const previouslySelected = yearSelect.value;
+    const uniqueYears = new Set(years.map(y => String(y)));
+    
+    // ➔ SÉCURITÉ : On force l'historique depuis la création du compte (2024) jusqu'au futur (currentYear + 1)
+    for (let y = 2024; y <= currentYear + 1; y++) {
+        uniqueYears.add(String(y));
+    }
+
+    yearSelect.innerHTML = ""; 
+    
+    Array.from(uniqueYears).sort((a, b) => b - a).forEach(year => {
         const option = document.createElement("option");
-        option.value = year; option.textContent = year;
-        if (parseInt(year) === currentYear) option.selected = true;
+        option.value = year;
+        option.textContent = year;
+        
+        if (previouslySelected ? year === previouslySelected : parseInt(year) === currentYear) {
+            option.selected = true;
+        }
         yearSelect.appendChild(option);
     });
 }
 
+// ==========================================
+//   Envoie une opération isolée vers une autre année
+// ==========================================
+async function saveSingleTransactionToOtherYear(targetYear, transaction) {
+    try {
+        const response = await fetch(`/api/transactions/single/${targetYear}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(transaction)
+        });
+
+        if (!response.ok) throw new Error("Erreur lors de l'ajout isolé.");
+
+        // On bascule visuellement sur l'année de l'opération qu'on vient de créer
+        activeYearFilter = targetYear;
+        const yearSelect = document.getElementById("year-select");
+        if (yearSelect) yearSelect.value = activeYearFilter;
+
+        // On recharge proprement toutes les données de cette année
+        loadTransactions();
+    } catch (error) {
+        console.error("Erreur de sauvegarde isolée :", error);
+        alert("Impossible d'enregistrer l'opération dans l'autre année.");
+    }
+}

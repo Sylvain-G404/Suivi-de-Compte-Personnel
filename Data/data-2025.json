@@ -1,0 +1,558 @@
+{
+  "soldeInitial": 15009.28,
+  "operations": [
+    {
+      "id": "2025-01-01",
+      "date": "01/01/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-01-02",
+      "date": "05/01/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-01-03",
+      "date": "06/01/2025",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 82.1
+    },
+    {
+      "id": "2025-01-04",
+      "date": "10/01/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 132.4
+    },
+    {
+      "id": "2025-01-05",
+      "date": "15/01/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-01-06",
+      "date": "22/01/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 95.15
+    },
+    {
+      "id": "2025-01-07",
+      "date": "26/01/2025",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 68.5
+    },
+    {
+      "id": "2025-02-01",
+      "date": "01/02/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-02-02",
+      "date": "05/02/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-02-03",
+      "date": "11/02/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 145.2
+    },
+    {
+      "id": "2025-02-04",
+      "date": "15/02/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-02-05",
+      "date": "20/02/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 88.3
+    },
+    {
+      "id": "2025-02-06",
+      "date": "25/02/2025",
+      "libelle": "Restaurant",
+      "rentree": null,
+      "depense": 52
+    },
+    {
+      "id": "2025-03-01",
+      "date": "01/03/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-03-02",
+      "date": "05/03/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-03-03",
+      "date": "06/03/2025",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 82.1
+    },
+    {
+      "id": "2025-03-04",
+      "date": "12/03/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 120.5
+    },
+    {
+      "id": "2025-03-05",
+      "date": "15/03/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-03-06",
+      "date": "22/03/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 101.4
+    },
+    {
+      "id": "2025-03-07",
+      "date": "28/03/2025",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 64.1
+    },
+    {
+      "id": "2025-04-01",
+      "date": "01/04/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-04-02",
+      "date": "05/04/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-04-03",
+      "date": "10/04/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 138.9
+    },
+    {
+      "id": "2025-04-04",
+      "date": "15/04/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-04-05",
+      "date": "24/04/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 92.6
+    },
+    {
+      "id": "2025-04-06",
+      "date": "28/04/2025",
+      "libelle": "Pharmacie",
+      "rentree": null,
+      "depense": 22.4
+    },
+    {
+      "id": "2025-05-01",
+      "date": "01/05/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-05-02",
+      "date": "05/05/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-05-03",
+      "date": "06/05/2025",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 82.1
+    },
+    {
+      "id": "2025-05-04",
+      "date": "12/05/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 115.8
+    },
+    {
+      "id": "2025-05-05",
+      "date": "15/05/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-05-06",
+      "date": "20/05/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 108.2
+    },
+    {
+      "id": "2025-05-07",
+      "date": "25/05/2025",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 67.3
+    },
+    {
+      "id": "2025-05-08",
+      "date": "30/05/2025",
+      "libelle": "Cinéma",
+      "rentree": null,
+      "depense": 13
+    },
+    {
+      "id": "2025-06-01",
+      "date": "01/06/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-06-02",
+      "date": "05/06/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-06-03",
+      "date": "10/06/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 129.45
+    },
+    {
+      "id": "2025-06-04",
+      "date": "15/06/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-06-05",
+      "date": "22/06/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 94.1
+    },
+    {
+      "id": "2025-06-06",
+      "date": "27/06/2025",
+      "libelle": "Achat Fnac",
+      "rentree": null,
+      "depense": 45.99
+    },
+    {
+      "id": "2025-07-01",
+      "date": "01/07/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-07-02",
+      "date": "05/07/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-07-03",
+      "date": "06/07/2025",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 89.5
+    },
+    {
+      "id": "2025-07-04",
+      "date": "11/07/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 141.2
+    },
+    {
+      "id": "2025-07-05",
+      "date": "15/07/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-07-06",
+      "date": "23/07/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 87.5
+    },
+    {
+      "id": "2025-07-07",
+      "date": "26/07/2025",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 69.2
+    },
+    {
+      "id": "2025-08-01",
+      "date": "01/08/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-08-02",
+      "date": "05/08/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-08-03",
+      "date": "12/08/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 112.6
+    },
+    {
+      "id": "2025-08-04",
+      "date": "15/08/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-08-05",
+      "date": "21/08/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 99.4
+    },
+    {
+      "id": "2025-08-06",
+      "date": "28/08/2025",
+      "libelle": "Boulangerie",
+      "rentree": null,
+      "depense": 14.5
+    },
+    {
+      "id": "2025-09-01",
+      "date": "01/09/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-09-02",
+      "date": "05/09/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-09-03",
+      "date": "06/09/2025",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 89.5
+    },
+    {
+      "id": "2025-09-04",
+      "date": "09/09/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 130.1
+    },
+    {
+      "id": "2025-09-05",
+      "date": "15/09/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-09-06",
+      "date": "22/09/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 105.3
+    },
+    {
+      "id": "2025-09-07",
+      "date": "27/09/2025",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 66.4
+    },
+    {
+      "id": "2025-10-01",
+      "date": "01/10/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-10-02",
+      "date": "05/10/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-10-03",
+      "date": "10/10/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 125.4
+    },
+    {
+      "id": "2025-10-04",
+      "date": "15/10/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-10-05",
+      "date": "23/10/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 91.8
+    },
+    {
+      "id": "2025-10-06",
+      "date": "29/10/2025",
+      "libelle": "Coiffeur",
+      "rentree": null,
+      "depense": 28
+    },
+    {
+      "id": "2025-11-01",
+      "date": "01/11/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-11-02",
+      "date": "05/11/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-11-03",
+      "date": "06/11/2025",
+      "libelle": "EDF Electricité",
+      "rentree": null,
+      "depense": 89.5
+    },
+    {
+      "id": "2025-11-04",
+      "date": "13/11/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 146.3
+    },
+    {
+      "id": "2025-11-05",
+      "date": "15/11/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-11-06",
+      "date": "20/11/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 84.2
+    },
+    {
+      "id": "2025-11-07",
+      "date": "25/11/2025",
+      "libelle": "Plein Essence Total",
+      "rentree": null,
+      "depense": 68.9
+    },
+    {
+      "id": "2025-12-01",
+      "date": "01/12/2025",
+      "libelle": "Salaire Net",
+      "rentree": 2250,
+      "depense": null
+    },
+    {
+      "id": "2025-12-02",
+      "date": "05/12/2025",
+      "libelle": "Loyer Résidence",
+      "rentree": null,
+      "depense": 660
+    },
+    {
+      "id": "2025-12-03",
+      "date": "11/12/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 162
+    },
+    {
+      "id": "2025-12-04",
+      "date": "15/12/2025",
+      "libelle": "Abonnement Internet Bouygues",
+      "rentree": null,
+      "depense": 37.99
+    },
+    {
+      "id": "2025-12-05",
+      "date": "18/12/2025",
+      "libelle": "Cadeaux Amazon",
+      "rentree": null,
+      "depense": 95.4
+    },
+    {
+      "id": "2025-12-06",
+      "date": "22/12/2025",
+      "libelle": "Courses Carrefour",
+      "rentree": null,
+      "depense": 118.5
+    }
+  ]
+}

@@ -4,7 +4,8 @@ package-lock.json
 
 
 # Scripts de structure et utilitaires Windows locaux
-generate_structure_V2.bat
+/Screent_Site
+/infos_Structure
 
 # Fichiers systèmes ou de configuration d'éditeurs
 .DS_Store

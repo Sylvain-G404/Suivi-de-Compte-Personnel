@@ -71,6 +71,13 @@ body {
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1.5rem;
+
+    /* ➔ SÉCURITÉ ERGONOMIQUE : La barre nous suit au scroll */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Passe au-dessus des tableaux et des textes */
+    background-color: var(--bg-main); /* Garde le fond noir opaque pour ne pas voir le tableau par transparence */
+    padding: 0.5rem 0 1rem 0; /* Ajoute un léger espace propre pour respirer */
 }
 
 .action-buttons {
